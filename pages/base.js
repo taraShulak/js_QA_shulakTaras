@@ -11,5 +11,4 @@ module.exports = {
   clickRegister() {
     I.click(this.registerButton)
   }
-  // insert your locators and methods here
 }

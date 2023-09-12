@@ -2,7 +2,6 @@ const { I } = inject();
 
 module.exports = {
   h1: {xpath: '//*[@id="content"]/h1'},
-  verSucRegH1: {xpath: '//*[@id="content"]/h1'},
   firstNameField: {xpath: '//*[@id="input-firstname"]'},
   lastNameField: {xpath: '//*[@id="input-lastname"]'},
   emailField: {xpath: '//*[@id="input-email"]'},
@@ -24,17 +23,12 @@ module.exports = {
     I.fillField(this.telField, user.tel);
     I.fillField(this.passwordField, user.password);
     I.fillField(this.confirmField, user.password);
-    I.wait(2);
     I.click(this.agree);
     I.click(this.continue);
-    I.wait(2);
     },
 
     verifySuccessfullRegistration() {
       const registerTitleText = 'Ваш обліковий запис створено!';
-      I.seeTextEquals(registerTitleText, this.verSucRegH1);
-      console.log('done');
-      
+      I.seeTextEquals(registerTitleText, this.h1);     
     }
-  // insert your locators and methods here
 }
